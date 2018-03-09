@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+    <link rel="import" href="/bower_components/px-gauge/px-gauge.html" />
+    <link rel="import" href="/bower_components/px-kpi/px-kpi-list.html" />
+    <link rel="import" href="/bower_components/px-simple-bar-chart/px-simple-bar-chart.html" />
+
+    <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
+    <link rel="import" href="/css/px-sample-layouts-styles.html" />
+  </head>
+
+<body>
+  <custom-style>
+    <style include="px-theme-styles" is="custom-style"></style>
+  </custom-style>
+  <custom-style>
+    <style include="px-sample-layouts-styles" is="custom-style"></style>
+  </custom-style>
+
+  <div class="u-p">
+
+    <section class="u-mt u-mb++">
+      <span class="delta">Title</span>
+      <div class="layout layout--huge layout--center u-mv++">
+        <div class="text--center layout__item"><px-gauge class="u-mb++ vis1" value="85" unit="%" normal='[ [0,100] ]' bar-width="20"></px-gauge><span class="epsilon caps">Site Name</span></div>
+        <div class="text--center layout__item"><px-gauge class="u-mb++ vis2" value="10" unit="%" normal='[ [0,100] ]' bar-width="20"></px-gauge><span class="epsilon caps">Site Name</span></div>
+        <div class="text--center layout__item"><px-gauge class="u-mb++ vis3" value="65" unit="%" normal='[ [0,100] ]' bar-width="20"></px-gauge><span class="epsilon caps">Site Name</span></div>
+      </div>
+    </section>
+
+    <section class="u-mt u-mb++">
+      <span class="delta">Reliability</span>
+      <div class="layout layout--huge u-mv++">
+        <px-kpi-list class="layout__item" key="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+        <px-kpi-list class="layout__item" key="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+      </div>
+    </section>
+
+    <section class="u-mt u-mb++">
+      <span class="delta">Availability</span>
+      <div class="layout layout--huge layout--center u-mv++">
+        <px-simple-bar-chart class="layout__item vis1" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis2" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis3" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis4" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+      </div>
+    </section>
+
+  </div>
+
+</body>

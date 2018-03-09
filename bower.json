@@ -1,0 +1,67 @@
+{
+  "name": "px-sample-layouts",
+  "version": "1.0.0",
+  "main": [
+    "px-sample-layouts.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "test",
+    "OSS_Notice.pdf",
+    ".github",
+    "px-sample-layouts.png",
+    "LICENSE.md",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
+    "README.md",
+    ".jshintrc",
+    ".editorconfig"
+  ],
+  "dependencies": {
+    "polymer": "^2.0.0",
+    "px-app-nav": "^2.0.6",
+    "px-context-browser": "^2.0.4",
+    "px-tabs": "^2.0.0",
+    "px-key-value-pair": "^1.0.2",
+    "px-card": "^2.0.0",
+    "px-breadcrumbs": "^1.1.6",
+    "px-inbox": "^2.0.2",
+    "px-toggle": "^2.0.1",
+    "px-simple-bar-chart": "^2.0.2",
+    "px-theme": "^3.0.0",
+    "px-dark-theme": "^2.0.14",
+    "px-dark-demo-theme": "^2.0.0",
+    "px-gauge": "^2.0.2",
+    "px-vis-timeseries": "^3.1.2",
+    "px-vis-radar": "^3.1.1",
+    "px-vis-polar": "^3.1.1",
+    "px-datetime-picker": "^2.0.0",
+    "px-data-grid": "^1.0.0",
+    "app-route": "PolymerElements/app-route#^2.0.3",
+    "px-alert-message": "^1.3.3",
+    "px-percent-circle": "^1.1.1",
+    "px-kpi": "^3.0.0",
+    "webcomponentsjs": "^1.0.0"
+  },
+  "devDependencies": {
+    "px-headings-design": "^1.0.3",
+    "px-forms-design": "^2.0.6",
+    "px-shadows-design": "^1.0.1",
+    "px-buttons-design": "^2.0.5",
+    "px-normalize-design": "^1.0.2",
+    "px-box-sizing-design": "^1.0.2",
+    "px-flexbox-design": "^1.0.2",
+    "px-spacing-design": "^1.0.2",
+    "px-helpers-design": "^1.0.3",
+    "px-widths-responsive-design": "^1.0.2",
+    "px-actionable-design": "^2.0.4",
+    "px-layout-design": "^1.0.2"
+  },
+  "resolutions": {
+    "px-d3-imports": "^3.0.0",
+    "pxd3": "^5.0.0"
+  }
+}
