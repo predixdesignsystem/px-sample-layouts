@@ -64,5 +64,6 @@
   "resolutions": {
     "px-d3-imports": "^3.0.0",
     "pxd3": "^5.0.0"
-  }
+  },
+  "license": "BSD-3-Clause"
 }
