@@ -5,78 +5,70 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Predix UI</title>
-  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="/bower_components/polymer/polymer.html" />
 
   <link rel="import" href="/bower_components/px-breadcrumbs/px-breadcrumbs.html" />
-  <link rel="import" href="/bower_components/px-tabs/px-tabs.html" />
-  <link rel="import" href="/bower_components/iron-pages/iron-pages.html" />
   <link rel="import" href="/bower_components/px-key-value-pair/px-key-value-pair.html" />
   <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
   <link rel="import" href="/bower_components/px-icon-set/px-icon-set.html" />
   <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
-  <link rel="import" href="/bower_components/px-kpi/px-kpi-list.html" />
+  <link rel="import" href="/bower_components/px-kpi/px-kpi.html" />
 
-  <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
-  <link rel="import" href="/css/px-sample-layouts-styles.html" />
+  <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+  <link rel="import" href="px-sample-page-5-styles.html" />
 </head>
 
-<body class="white">
+<body class="card">
   <custom-style>
-    <style include="px-theme-styles" is="custom-style"></style>
+    <style include="px-dark-theme-styles" is="custom-style"></style>
   </custom-style>
   <custom-style>
-    <style include="px-sample-layouts-styles" is="custom-style"></style>
+    <style include="px-sample-page-5-styles" is="custom-style"></style>
   </custom-style>
 
   <dom-bind>
     <template is="dom-bind">
       <div class="u-p">
-        <px-breadcrumbs class="u--m-" items="[[breadcrumbItems]]" selected-route='["North America", "United States of America", "California"]'></px-breadcrumbs>
+        <px-breadcrumbs class="u--ml-" items="[[breadcrumbItems]]" selected-route='["North America", "United States of America", "California"]'></px-breadcrumbs>
         <br/>
-        <span class="heading--page">Title of Page</span>
-        <br/><br/>
-        <px-tabs selected="0">
-          <px-tab id='tab1'>Tab Navigation</px-tab>
-          <px-tab id='tab2'>Tab Navigation</px-tab>
-          <px-tab id='tab3'>Tab Navigation</px-tab>
-          <px-tab id='tab3'>Tab Navigation</px-tab>
-        </px-tabs>
-
-        <iron-pages selected="0">
-          <div class="u-mt++">
-
-            <span class="heading--section">Section Title</span>
-            <div class="layout layout--huge u-mv++">
-              <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-              <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-              <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-              <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-              <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            </div>
-
-            <div class="flex flex--justify">
-              <span class="heading--section">Table Title</span>
-              <div>
-                <px-icon class="actionable actionable--action u-ml" icon="px-utl:filter"></px-icon>
-                <px-icon class="actionable actionable--action u-ml" icon="px-utl:edit"></px-icon>
-                <px-icon class="actionable actionable--action u-ml" icon="px-utl:help"></px-icon>
-              </div>
-            </div>
-
-            <px-data-grid table-data='[[tableData]]' hide-action-menu></px-data-grid>
-
-            <span class="heading--subsection u-mv++">Sub-Section Header</span>
-            <div class="layout layout--huge u-mv++">
-              <px-kpi-list class="layout__item" key="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-              <px-kpi-list class="layout__item" key="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-              <px-kpi-list class="layout__item" key="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-            </div>
-
+        <div class="flex flex--justify flex--middle u-mv">
+          <span class="heading--page">Title of Page</span>
+          <div>
+            <button class="btn">Default</button>
+            <button class="btn btn--call-to-action">CTA</button>
           </div>
-        </iron-pages>
+        </div>
+        <div>Secondary Information</div>
+        <div>Supplemental Information</div>
+      </div>
+
+      <div class="dark-card u-p u-mt++">
+
+        <span class="heading--section">Section Title</span>
+        <div class="u-mv++ u-1/2">
+          <px-key-value-pair label="Label" value="Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor."></px-key-value-pair>
+        </div>
+
+        <div class="flex flex--justify">
+          <span class="heading--section">Table Title</span>
+          <div>
+            <px-icon class="actionable actionable--action u-ml" icon="px-utl:filter"></px-icon>
+            <px-icon class="actionable actionable--action u-ml" icon="px-utl:edit"></px-icon>
+            <px-icon class="actionable actionable--action u-ml" icon="px-utl:help"></px-icon>
+          </div>
+        </div>
+
+        <px-data-grid table-data='[[tableData]]' hide-action-menu></px-data-grid>
+
+        <div class="layout layout--huge u-mv++">
+          <px-kpi class="layout__item vis1" label="Orders" status-icon="px-nav:down" status-color="red" status-label="3%" value="125K" uom="YTD" spark-type="line" spark-data="[[sparkData]]"></px-kpi>
+          <px-kpi class="layout__item vis2" label="Production" status-icon="px-nav:up" status-color="green" status-label="12%" value="42M" uom="UNITS" spark-type="line" spark-data="[[sparkData]]"></px-kpi>
+          <px-kpi class="layout__item vis3" label="Uptime" status-icon="px-nav:up" status-color="green" status-label="10%" value="345" uom="HRS" spark-type="line" spark-data="[[sparkData]]"></px-kpi>
+        </div>
 
       </div>
+
     </template>
   </dom-bind>
 
@@ -282,4 +274,41 @@
       "current reading": "18.331"
     }
   ];
+  autobind.sparkData = [{
+    "x": 1397102460000,
+    "y": 0.56
+  }, {
+    "x": 1397139660000,
+    "y": 0.4
+  }, {
+    "x": 1397177400000,
+    "y": 0.43
+  }, {
+    "x": 1397228040000,
+    "y": 0.33
+  }, {
+    "x": 1397248260000,
+    "y": 0.47
+  }, {
+    "x": 1397291280000,
+    "y": 0.41
+  }, {
+    "x": 1397318100000,
+    "y": 0.26
+  }, {
+    "x": 1397342100000,
+    "y": 0.42
+  }, {
+    "x": 1397390820000,
+    "y": 0.27
+  }, {
+    "x": 1397408100000,
+    "y": 0.38
+  }, {
+    "x": 1397458800000,
+    "y": 0.36
+  }, {
+    "x": 1397522940000,
+    "y": 0.32
+  }];
 </script>

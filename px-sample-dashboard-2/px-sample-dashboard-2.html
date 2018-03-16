@@ -4,86 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Predix UI</title>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html" />
 
-    <link rel="import" href="/bower_components/px-tabs/px-tabs.html" />
-    <link rel="import" href="/bower_components/iron-pages/iron-pages.html" />
-    <link rel="import" href="/bower_components/px-key-value-pair/px-key-value-pair.html" />
-    <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
-    <link rel="import" href="/bower_components/px-icon-set/px-icon-set.html" />
-    <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+    <link rel="import" href="/bower_components/px-card/px-card.html" />
+    <link rel="import" href="/bower_components/px-kpi/px-kpi.html" />
+    <link rel="import" href="/bower_components/px-kpi/px-kpi-list.html" />
+    <link rel="import" href="/bower_components/px-data-grid/px-data-grid-paginated.html" />
 
     <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
-    <link rel="import" href="/css/px-sample-layouts-styles.html" />
+    <link rel="import" href="px-sample-dashboard-2-styles.html" />
   </head>
 
-<body class="white">
+<body>
   <custom-style>
     <style include="px-theme-styles" is="custom-style"></style>
   </custom-style>
   <custom-style>
-    <style include="px-sample-layouts-styles" is="custom-style"></style>
+    <style include="px-sample-dashboard-2-styles" is="custom-style"></style>
   </custom-style>
 
-  <div class="gray u-pt++">
+  <div class="card u-p">
+    <span class="heading--page">Production</span>
 
-    <px-tabs selected="0">
-      <px-tab id='tab1'>Tab Navigation</px-tab>
-      <px-tab id='tab2'>Tab Navigation</px-tab>
-      <px-tab id='tab3'>Tab Navigation</px-tab>
-      <px-tab id='tab3'>Tab Navigation</px-tab>
-    </px-tabs>
-
-    <iron-pages selected="0">
-      <div>
-
-        <section class="u-p">
-          <span class="heading--page u-mr">Title of Page</span>
-          <div class="layout layout--huge u-mv++">
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-          </div>
-          <div class="layout layout--huge u-mv++">
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-          </div>
-        </section>
-
-        <section class="white u-p">
-          <span class="heading--section">Section Title</span>
-          <div class="layout layout--huge u-mv++">
-            <px-key-value-pair class="layout__item" key="Label" value="Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor."></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor."></px-key-value-pair>
-          </div>
-          <span class="heading--subsection">Sub-Section Header</span>
-          <div class="layout layout--huge u-mv++">
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-            <px-key-value-pair class="layout__item" key="Label" value="Value"></px-key-value-pair>
-          </div>
-          <div class="flex flex--justify">
-            <span class="heading--section">Section Title</span>
-            <px-icon class="actionable actionable--action" icon="px-utl:add"></px-icon>
-          </div>
-
-          <dom-bind>
-            <template is="dom-bind">
-              <px-data-grid table-data='[[tableData]]' hide-action-menu></px-data-grid>
-            </template>
-          </dom-bind>
-
-        </section>
-
-      </div>
-    </iron-pages>
-
+    <div class="layout u-mt++">
+      <px-kpi class="layout__item" label="Orders" value="21" size="beta"></px-kpi>
+      <px-kpi class="layout__item" label="Capacity" value="583" size="beta"></px-kpi>
+      <px-kpi class="layout__item" label="Utilization" value="89" uom="%" size="beta"></px-kpi>
+      <px-kpi class="layout__item" label="Faults" value="3" size="beta"></px-kpi>
+      <px-kpi class="layout__item" label="Output" value="53" uom="MW" size="beta"></px-kpi>
+    </div>
   </div>
+
+  <px-card class="background" header-text="Watch List" icon="px-fea:asset">
+    <px-icon slot='actions' icon='px-nav:more'></px-icon>
+    <div class="layout layout--huge">
+      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+    </div>
+  </px-card>
+
+  <px-card class="background" header-text="Asset Status" icon="px-obj:fleet">
+    <px-icon slot='actions' icon='px-nav:more'></px-icon>
+    <dom-bind>
+      <template is="dom-bind">
+        <px-data-grid-paginated table-data='[[tableData]]' hide-action-menu></px-data-grid-paginated>
+      </template>
+    </dom-bind>
+  </px-card>
 
 </body>
 

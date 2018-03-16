@@ -17,39 +17,20 @@
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
 @import "px-box-sizing-design/_generic.box-sizing.scss";
-@import "px-helpers-design/_generic.helpers.scss";
 
 // Base
-@import "px-flexbox-design/_base.flexbox.scss";
 @import "px-headings-design/_base.headings.scss";
-$inuit-enable-input--tiny    : true;
-$inuit-enable-input--small    : true;
-@import "px-forms-design/_base.forms.scss";
 
 // Meta
 
 // Objects
-@import "px-shadows-design/_objects.shadows.scss";
-$inuit-enable-btn--call-to-action : true;
-@import 'px-buttons-design/_objects.buttons.scss';
-@import 'px-actionable-design/_objects.actionable.scss';
 $inuit-enable-layout--center : true;
 $inuit-enable-layout--huge   : true;
 @import 'px-layout-design/_objects.layout.scss';
 
 // Component
-html, body {
-  display: block;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  width: 100%;
-}
-.gray {
+.card {
   background-color: var(--px-card-background-color);
-}
-.white {
-  background-color: var(--px-base-background-color);
 }
 .layout__item {
   margin-bottom: 1rem;
@@ -64,46 +45,23 @@ px-gauge {
 }
 .vis1 {
   --px-gauge-fill-normal-color: $blue5;
-  --px-percent-circle-fill-color: $blue5;
   --px-vis-series-color-0: $blue5;
 }
 .vis2 {
   --px-gauge-fill-normal-color: $green5;
-  --px-percent-circle-fill-color: $green5;
   --px-vis-series-color-0: $green5;
 }
 .vis3 {
   --px-gauge-fill-normal-color: $purple5;
-  --px-percent-circle-fill-color: $purple5;
   --px-vis-series-color-0: $purple5;
 }
 .vis4 {
   --px-gauge-fill-normal-color: $orange5;
-  --px-percent-circle-fill-color: $orange5;
   --px-vis-series-color-0: $orange5;
-}
-px-vis-timeseries {
-  --px-vis-series-color-0: $blue5;
-  --px-vis-series-color-1: $green5;
-  --px-vis-series-color-2: $purple5;
-  --px-vis-series-color-3: $orange5;
-}
-
-px-inbox {
-  --px-inbox-height: 100vh;
 }
 
 // Trumps
 $inuit-enable-margins                  : true;
-$inuit-enable-margins--tiny            : true;
-$inuit-enable-margins--small           : true;
-$inuit-enable-margins--large           : true;
 $inuit-enable-margins--huge            : true;
-$inuit-enable-margins--negative-small  : true;
 $inuit-enable-paddings                 : true;
-$inuit-enable-paddings--tiny           : true;
-$inuit-enable-paddings--small          : true;
-$inuit-enable-paddings--large          : true;
-$inuit-enable-paddings--huge           : true;
 @import "px-spacing-design/_trumps.spacing.scss";
-@import "px-widths-responsive-design/_trumps.widths-responsive.scss";

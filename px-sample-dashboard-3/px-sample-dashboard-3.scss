@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+// Settings
+@import "px-colors-design/_settings.colors.scss";
+@import "px-defaults-design/_settings.defaults.scss";
+
+// Tools
+
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+
+// Base
+@import "px-headings-design/_base.headings.scss";
+
+// Meta
+
+// Objects
+$inuit-enable-layout--huge   : true;
+@import 'px-layout-design/_objects.layout.scss';
+
+// Component
+.layout__item {
+  margin-bottom: 1rem;
+  min-width: 10rem;
+}
+
+.vis1 {
+  --px-vis-series-color-0: $blue5;
+  --px-win-loss-positive-fill-color: $blue5;
+}
+.vis2 {
+  --px-vis-series-color-0: $green5;
+  --px-win-loss-positive-fill-color: $green5;
+}
+.vis3 {
+  --px-vis-series-color-0: $purple5;
+  --px-win-loss-positive-fill-color: $purple5;
+}
+.vis4 {
+  --px-vis-series-color-0: $orange5;
+  --px-win-loss-positive-fill-color: $orange5;
+}
+px-vis-timeseries {
+  --px-vis-series-color-0: $blue5;
+  --px-vis-series-color-1: $green5;
+  --px-vis-series-color-2: $purple5;
+  --px-vis-series-color-3: $orange5;
+}
+
+// Trumps
+$inuit-enable-margins--huge            : true;
+$inuit-enable-paddings                 : true;
+@import "px-spacing-design/_trumps.spacing.scss";

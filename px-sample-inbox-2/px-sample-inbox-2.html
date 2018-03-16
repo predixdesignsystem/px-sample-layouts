@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predix UI</title>
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+  <link rel="import" href="/bower_components/px-inbox/px-inbox.html" />
+  <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
+  <link rel="import" href="/bower_components/px-icon-set/px-icon-set.html" />
+  <link rel="import" href="/bower_components/px-tabs/px-tabs.html" />
+  <link rel="import" href="/bower_components/iron-pages/iron-pages.html" />
+  <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+  <link rel="import" href="/bower_components/px-dropdown/px-dropdown.html" />
+
+  <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
+  <link rel="import" href="px-sample-inbox-2-styles.html" />
+</head>
+
+<body>
+  <custom-style>
+    <style include="px-theme-styles" is="custom-style"></style>
+  </custom-style>
+  <custom-style>
+    <style include="px-sample-inbox-2-styles" is="custom-style"></style>
+  </custom-style>
+
+  <dom-bind>
+    <template is="dom-bind">
+
+      <px-inbox list-items='[[listItems]]'>
+
+        <div class="flex flex--justify flex--middle">
+          <div class="heading--page u-p">{{title}}</div>
+          <div>
+            <px-icon class="actionable actionable--action u-mr" icon="px-doc:chart"></px-icon>
+            <px-icon class="actionable actionable--action u-mr" icon="px-utl:edit"></px-icon>
+            <px-icon class="actionable actionable--action u-mr" icon="px-utl:app-settings"></px-icon>
+          </div>
+        </div>
+
+        <px-tabs selected="0">
+          <px-tab id='tab1'>Tab Navigation</px-tab>
+          <px-tab id='tab2'>Tab Navigation</px-tab>
+          <px-tab id='tab3'>Tab Navigation</px-tab>
+          <px-tab id='tab3'>Tab Navigation</px-tab>
+        </px-tabs>
+
+        <iron-pages selected="0">
+          <div class="u-p">
+            <div class="flex flex--justify">
+              <span class="heading--section">Section Title</span>
+              <px-icon class="actionable actionable--action" icon="px-nav:more"></px-icon>
+            </div>
+            <px-data-grid class="u-mb++" table-data='[[tableData]]' grid-height="auto" hide-action-menu></px-data-grid>
+
+            <span class="heading--section">Section Title</span>
+            <div class="layout layout--huge u-2/3 u-mv++">
+              <div class="layout__item">
+                <label>Label</label>
+                <px-dropdown display-value="Action"></px-dropdown>
+              </div>
+              <div class="layout__item">
+                <label>Label</label>
+                <px-dropdown display-value="Action"></px-dropdown>
+              </div>
+            </div>
+            <div class="layout layout--huge u-2/3">
+              <div class="layout__item">
+                <label>Label</label>
+                <textarea placeholder="Hint Text"></textarea>
+              </div>
+            </div>
+          </div>
+        </iron-pages>
+
+      </px-inbox>
+
+    </template>
+  </dom-bind>
+
+</body>
+
+<script>
+  var autobind = document.querySelector('dom-bind');
+  autobind.listItems = [{
+      "id": "1",
+      "title": "CMS Cold Spot",
+      "subtitle": "GT240182",
+      "severity": "important",
+      "date": "2016-10-05T01:29",
+      "alertId": "749581",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-05T08:00",
+      "caseNumber": "127587937",
+      "customer": "Dorothy Vaughan",
+      "serialNumber": "GT769375",
+      "dlnType": "DLN 2.6",
+      "model": "7FA+e"
+    }, {
+      "id": "2",
+      "title": "Drum Level Anomaly",
+      "subtitle": "Block 2",
+      "severity": "warning",
+      "date": "2016-10-04T01:27",
+      "alertId": "249375",
+      "alertSource": "Ignition",
+      "receivedDateTime": "2016-10-04T03:30",
+      "caseNumber": "857463748",
+      "customer": "Mary Jackson",
+      "serialNumber": "GE783556",
+      "dlnType": "DLN 1.4",
+      "model": "2MA+c"
+    }, {
+      "id": "3",
+      "title": "GT Vibration",
+      "subtitle": "GT20145",
+      "severity": "error",
+      "date": "2016-10-03T01:21",
+      "alertId": "749581",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-03T01:50",
+      "caseNumber": "5635221",
+      "customer": "Katherine Johnson",
+      "serialNumber": "DM528443",
+      "dlnType": "DLN 1.0",
+      "model": "9985A"
+    }, {
+      "id": "4",
+      "title": "Drum Level Anomaly",
+      "subtitle": "Block 4 of GT23183 of Power Plant XYZ",
+      "severity": "information",
+      "date": "2016-10-03T01:05",
+      "alertId": "1999574",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-03T10:03",
+      "caseNumber": "44938",
+      "customer": "Sally Ride",
+      "serialNumber": "GT769375",
+      "dlnType": "DLN 2.6",
+      "model": "7FA+e"
+    }, {
+      "id": "5",
+      "title": "GT Trip",
+      "subtitle": "GT23193",
+      "severity": "important",
+      "date": "2016-10-02T12:30",
+      "alertId": "482001",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-02T11:16",
+      "caseNumber": "127587937",
+      "customer": "Ilan Ramon",
+      "serialNumber": "IL194800",
+      "dlnType": "DLN 6",
+      "model": "TTA3"
+    }, {
+      "id": "6",
+      "title": "CMS Hot Spot",
+      "subtitle": "GT240183",
+      "severity": "warning",
+      "date": "2016-10-01T02:30",
+      "alertId": "482000",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-01T11:16",
+      "caseNumber": "127587105",
+      "customer": "Sally Ride",
+      "serialNumber": "IL194893",
+      "dlnType": "DLN 6",
+      "model": "TTA3"
+    }];
+  autobind.title = 'CMS Cold Spot';
+  autobind.tableData = [
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-suctionpressure",
+      "units": "m/s",
+      "current reading": "18.331"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-suctionpressure",
+      "units": "m/s",
+      "current reading": "18.331"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    }
+  ];
+
+  var inbox = document.querySelector('px-inbox');
+  inbox.addEventListener('selected-item-changed', updateInboxDetails);
+
+  function updateInboxDetails(e) {
+    var autobind = document.querySelector('dom-bind');
+    var selectedId = e.detail.value;
+    if (!autobind.listItems) return;
+    var inboxItem = autobind.listItems.find(function (item) {
+      return item.id === e.detail.value;
+    });
+    if (!inboxItem || !inboxItem.title) return;
+    autobind.set("title", inboxItem.title);
+  };
+</script>

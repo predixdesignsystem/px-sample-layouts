@@ -25,7 +25,7 @@
     "px-app-nav": "^2.0.6",
     "px-context-browser": "^2.0.4",
     "px-tabs": "^2.0.0",
-    "px-key-value-pair": "^1.0.2",
+    "px-key-value-pair": "^2.0.0",
     "px-card": "^2.0.0",
     "px-breadcrumbs": "^1.1.6",
     "px-inbox": "^2.0.2",
@@ -43,8 +43,9 @@
     "app-route": "PolymerElements/app-route#^2.0.3",
     "px-alert-message": "^1.3.3",
     "px-percent-circle": "^1.1.1",
-    "px-kpi": "^3.0.0",
-    "webcomponentsjs": "^1.0.0"
+    "px-kpi": "^4.0.0",
+    "webcomponentsjs": "^1.0.0",
+    "px-dropdown": "^4.7.6"
   },
   "devDependencies": {
     "px-headings-design": "^1.0.3",
@@ -56,7 +57,7 @@
     "px-flexbox-design": "^1.0.2",
     "px-spacing-design": "^1.0.2",
     "px-helpers-design": "^1.0.3",
-    "px-widths-responsive-design": "^1.0.2",
+    "px-widths-design": "^1.0.0",
     "px-actionable-design": "^2.0.4",
     "px-layout-design": "^1.0.2"
   },

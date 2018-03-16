@@ -5,16 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Predix UI</title>
-  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="/bower_components/polymer/polymer.html" />
 
-  <link rel="import" href="/bower_components/px-card/px-card.html" />
   <link rel="import" href="/bower_components/px-percent-circle/px-percent-circle.html" />
   <link rel="import" href="/bower_components/px-data-grid/px-data-grid-paginated.html" />
 
   <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
   <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
-  <link rel="import" href="/css/px-sample-layouts-styles.html" />
+  <link rel="import" href="px-sample-dashboard-1-styles.html" />
 </head>
 
 <body>
@@ -22,7 +21,7 @@
     <style include="px-dark-theme-styles" is="custom-style"></style>
   </custom-style>
   <custom-style>
-    <style include="px-sample-layouts-styles" is="custom-style"></style>
+    <style include="px-sample-dashboard-1-styles" is="custom-style"></style>
   </custom-style>
 
   <div>
@@ -47,15 +46,15 @@
         </div>
       </div>
     </section>
-    <light-card></light-card>
+    <light-theme></light-theme>
   </div>
 
 </body>
 
-<dom-module id="light-card">
+<dom-module id="light-theme">
   <template>
     <style include="px-theme-styles"></style>
-    <style include="px-sample-layouts-styles"></style>
+    <style include="px-sample-dashboard-1-styles"></style>
 
     <section class="u-p">
       <div class="flex flex--justify">
@@ -66,13 +65,13 @@
           <px-icon class="actionable actionable--action u-ml" icon="px-utl:help"></px-icon>
         </div>
       </div>
-      <px-data-grid table-data='[[tableData]]' hide-action-menu></px-data-grid>
+      <px-data-grid-paginated table-data='[[tableData]]' hide-action-menu></px-data-grid-paginated>
     </section>
 
   </template>
   <script>
     Polymer({
-      is: "light-card",
+      is: "light-theme",
       properties: {
         tableData: {
           type: Array,

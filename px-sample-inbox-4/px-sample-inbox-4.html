@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predix UI</title>
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+  <link rel="import" href="/bower_components/px-inbox/px-inbox.html" />
+  <link rel="import" href="/bower_components/px-key-value-pair/px-key-value-pair.html" />
+  <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+
+  <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+  <link rel="import" href="px-sample-inbox-4-styles.html" />
+</head>
+
+<body>
+  <custom-style>
+    <style include="px-dark-theme-styles" is="custom-style"></style>
+  </custom-style>
+  <custom-style>
+    <style include="px-sample-inbox-4-styles" is="custom-style"></style>
+  </custom-style>
+
+  <dom-bind>
+    <template is="dom-bind">
+
+      <px-inbox list-items='[[listItems]]'>
+
+        <div class="u-p">
+          <div class="heading--page u-mb++">{{title}}</div>
+          <span class="heading--section u-mv++">Section Title</span>
+          <div class="layout u-mv++">
+            <px-key-value-pair class="layout__item" label="Alert ID" value="{{alertId}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="Alert Source" value="{{alertSource}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="Received Date/Time" value="{{receivedDateTime}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="Case Number" value="{{caseNumber}}"></px-key-value-pair>
+          </div>
+          <div class="layout u-mv++">
+            <px-key-value-pair class="layout__item" label="Customer" value="{{customer}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="Contract Type" value="{{serialNumber}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="DLN Type" value="{{dlnType}}"></px-key-value-pair>
+            <px-key-value-pair class="layout__item" label="Security" value="{{model}}"></px-key-value-pair>
+          </div>
+          <div class="flex flex--justify flex--middle">
+            <span class="heading--section u-mv++">Section Title</span>
+            <div>
+              <px-icon class="actionable actionable--action u-mr" icon="px-doc:chart"></px-icon>
+              <px-icon class="actionable actionable--action u-mr" icon="px-utl:edit"></px-icon>
+              <px-icon class="actionable actionable--action u-mr" icon="px-utl:app-settings"></px-icon>
+            </div>
+          </div>
+          <px-data-grid grid-height="auto" table-data='[[tableData]]' hide-action-menu></px-data-grid>
+        </div>
+
+      </px-inbox>
+
+    </template>
+  </dom-bind>
+
+</body>
+
+<script>
+  var autobind = document.querySelector('dom-bind');
+  autobind.listItems = [{
+      "id": "1",
+      "title": "CMS Cold Spot",
+      "subtitle": "GT240182",
+      "severity": "important",
+      "date": "2016-10-05T01:29",
+      "alertId": "749581",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-05T08:00",
+      "caseNumber": "127587937",
+      "customer": "Dorothy Vaughan",
+      "serialNumber": "GT769375",
+      "dlnType": "DLN 2.6",
+      "model": "7FA+e"
+    }, {
+      "id": "2",
+      "title": "Drum Level Anomaly",
+      "subtitle": "Block 2",
+      "severity": "warning",
+      "date": "2016-10-04T01:27",
+      "alertId": "249375",
+      "alertSource": "Ignition",
+      "receivedDateTime": "2016-10-04T03:30",
+      "caseNumber": "857463748",
+      "customer": "Mary Jackson",
+      "serialNumber": "GE783556",
+      "dlnType": "DLN 1.4",
+      "model": "2MA+c"
+    }, {
+      "id": "3",
+      "title": "GT Vibration",
+      "subtitle": "GT20145",
+      "severity": "error",
+      "date": "2016-10-03T01:21",
+      "alertId": "749581",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-03T01:50",
+      "caseNumber": "5635221",
+      "customer": "Katherine Johnson",
+      "serialNumber": "DM528443",
+      "dlnType": "DLN 1.0",
+      "model": "9985A"
+    }, {
+      "id": "4",
+      "title": "Drum Level Anomaly",
+      "subtitle": "Block 4 of GT23183 of Power Plant XYZ",
+      "severity": "information",
+      "date": "2016-10-03T01:05",
+      "alertId": "1999574",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-03T10:03",
+      "caseNumber": "44938",
+      "customer": "Sally Ride",
+      "serialNumber": "GT769375",
+      "dlnType": "DLN 2.6",
+      "model": "7FA+e"
+    }, {
+      "id": "5",
+      "title": "GT Trip",
+      "subtitle": "GT23193",
+      "severity": "important",
+      "date": "2016-10-02T12:30",
+      "alertId": "482001",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-02T11:16",
+      "caseNumber": "127587937",
+      "customer": "Ilan Ramon",
+      "serialNumber": "IL194800",
+      "dlnType": "DLN 6",
+      "model": "TTA3"
+    }, {
+      "id": "6",
+      "title": "CMS Hot Spot",
+      "subtitle": "GT240183",
+      "severity": "warning",
+      "date": "2016-10-01T02:30",
+      "alertId": "482000",
+      "alertSource": "Combustion",
+      "receivedDateTime": "2016-10-01T11:16",
+      "caseNumber": "127587105",
+      "customer": "Sally Ride",
+      "serialNumber": "IL194893",
+      "dlnType": "DLN 6",
+      "model": "TTA3"
+    }];
+  autobind.title = 'CMS Cold Spot';
+  autobind.severity = '';
+  autobind.alertId = '749581';
+  autobind.alertSource = 'Combustion';
+  autobind.receivedDateTime = '2016-10-05T01:29';
+  autobind.caseNumber = '127587937';
+  autobind.customer = 'Dorothy Vaughan';
+  autobind.serialNumber = 'GT769375';
+  autobind.dlnType = 'DLN 2.6';
+  autobind.model = '7FA+e';
+  autobind.tableData = [
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-suctionpressure",
+      "units": "m/s",
+      "current reading": "18.331"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-suctionpressure",
+      "units": "m/s",
+      "current reading": "18.331"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-dischargepressure",
+      "units": "psi",
+      "current reading": "2.605"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-suctionpressure",
+      "units": "m/s",
+      "current reading": "18.331"
+    },
+    {
+      "last occurance": "2017-09-17, 19:33:51",
+      "asset path": "/Unit1/HRSG",
+      "point": "39VS11",
+      "meter": "crank-frame-compressionratio",
+      "units": "psi",
+      "current reading": "0.88"
+    }
+  ];
+
+  var inbox = document.querySelector('px-inbox');
+  inbox.addEventListener('selected-item-changed', updateInboxDetails);
+
+  function updateInboxDetails(e) {
+    var autobind = document.querySelector('dom-bind');
+    var selectedId = e.detail.value;
+    if (!autobind.listItems) return;
+    var inboxItem = autobind.listItems.find(function (item) {
+      return item.id === e.detail.value;
+    });
+    if (!inboxItem || !inboxItem.title) return;
+    autobind.set("title", inboxItem.title);
+    autobind.set("severity", inboxItem.severity);
+    autobind.set("isSelected", true);
+    autobind.set("alertId", inboxItem.alertId);
+    autobind.set("alertSource", inboxItem.alertSource);
+    autobind.set("receivedDateTime", inboxItem.receivedDateTime);
+    autobind.set("caseNumber", inboxItem.caseNumber);
+    autobind.set("customer", inboxItem.customer);
+    autobind.set("serialNumber", inboxItem.serialNumber);
+    autobind.set("dlnType", inboxItem.dlnType);
+    autobind.set("model", inboxItem.model);
+  };
+</script>
