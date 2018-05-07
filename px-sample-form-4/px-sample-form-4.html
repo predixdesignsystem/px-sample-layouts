@@ -10,37 +10,39 @@
     <link rel="import" href="/bower_components/px-dropdown/px-dropdown.html" />
     <link rel="import" href="/bower_components/px-toggle/px-toggle.html" />
 
-    <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
-    <link rel="import" href="px-sample-form-1-styles.html" />
+    <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+    <link rel="import" href="px-sample-form-4-styles.html" />
   </head>
 
   <body class="u-p">
     <custom-style>
-      <style include="px-theme-styles" is="custom-style"></style>
+      <style include="px-dark-theme-styles" is="custom-style"></style>
     </custom-style>
     <custom-style>
-      <style include="px-sample-form-1-styles" is="custom-style"></style>
+      <style include="px-sample-form-4-styles" is="custom-style"></style>
     </custom-style>
 
     <heading class="heading--page">Title of Page</heading>
+    <br/><br/>
+    <span>Required fields are marked with an asterisk *</span>
 
-    <form id="form1">
+    <form id="form4">
 
       <section>
         <div class="heading--section u-mb++">Billing Information</div>
         <div class="layout layout--huge">
           <div class="layout__item u-1/3 u-1/1-palm u-mb++">
-            <label for="input1">First Name</label>
+            <label for="input1">First Name *</label>
             <input id="input1" class="text-input" type="text" value="Borislav" />
           </div>
           <div class="layout__item u-1/3 u-1/1-palm u-mb++">
-            <label for="input2">Last Name</label>
+            <label for="input2">Last Name *</label>
             <input id="input2" class="text-input" type="text" value="Schildkraut" />
           </div>
         </div>
         <div class="layout layout--huge">
           <div class="layout__item u-1/3 u-1/1-palm u-mb++">
-            <label for="input3">Email Address</label>
+            <label for="input3">Email Address *</label>
             <input id="input3" class="text-input" type="email" value="b.schildkraut@gmail.com" />
           </div>
           <div class="layout__item u-1/3 u-1/1-palm u-mb++">
@@ -136,9 +138,9 @@
 
     </form>
 
-    <div class="u-mv++ u-2/3 u-1/1-palm text--right">
+    <div class="u-mb++ u-2/3 u-1/1-palm text--right">
       <button class="btn">Cancel</button>
-      <button class="btn btn--call-to-action" type="submit" form="form1">Submit</button>
+      <button class="btn btn--call-to-action" type="submit" form="form4">Submit</button>
     </div>
 
   </body>

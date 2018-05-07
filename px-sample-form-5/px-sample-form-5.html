@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+    <link rel="import" href="/bower_components/px-dropdown/px-dropdown.html" />
+    <link rel="import" href="/bower_components/px-toggle/px-toggle.html" />
+    <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
+    <link rel="import" href="/bower_components/px-icon-set/px-icon-set-object.html" />
+
+    <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+    <link rel="import" href="px-sample-form-5-styles.html" />
+  </head>
+
+  <body>
+    <custom-style>
+      <style include="px-dark-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-form-5-styles" is="custom-style"></style>
+    </custom-style>
+
+    <div class="layout u-m0">
+      <div class="layout__item u-2/3 u-1/1-palm u-p">
+
+        <span class="heading--page">Title of Page</span>
+        <form id="form5">
+
+          <section class="main">
+            <div class="heading--section u-mb++">Billing Information</div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input1">First Name</label>
+                <input id="input1" class="text-input" type="text" value="Borislav" />
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input2">Last Name</label>
+                <input id="input2" class="text-input" type="text" value="Schildkraut" />
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input3">Email Address</label>
+                <input id="input3" class="text-input" type="email" value="b.schildkraut@gmail.com" />
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input4">Phone Number</label>
+                <input id="input4" class="text-input" type="tel" value="415-555-7890" />
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/1 u-mb++">
+                <label for="input5">Address</label>
+                <input id="input5" class="text-input" type="text" value="1230 Broadway Street" />
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input6">City</label>
+                <input id="input6" class="text-input" type="text" value="San Francisco" />
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input7">Zip Code</label>
+                <input id="input7" class="text-input" type="text" value="94123" />
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input8">State</label>
+                <px-dropdown id="input8" display-value="California"></px-dropdown>
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input9">Country</label>
+                <px-dropdown id="input9" display-value="United States of America"></px-dropdown>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="heading--section u-mb++">Shipping Information</div>
+            <div class="flex flex--middle u-mv">
+              <px-toggle checked></px-toggle>
+              <span class="u-ml">Same as billing address</span>
+            </div>
+          </section>
+
+          <section>
+            <div class="heading--section u-mb++">Shipping Method</div>
+            <div class="layout layout--huge">
+              <px-dropdown class="layout__item u-1/4 u-1/1-palm" id="input8" display-value="UPS Ground"></px-dropdow u-mb++n>
+              <div class="layout__item u-1/4 u-1/1-palm">$7.89</div u-mb++v>
+            </div>
+          </section>
+
+          <section>
+            <div class="heading--section u-mb++">Payment Method</div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input10">Payment Type</label>
+                <px-dropdown id="input10" display-value="Credit Card"></px-dropdown>
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input11">Credit Card Type</label>
+                <px-dropdown id="input11" display-value="Visa"></px-dropdown>
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input12">First Name</label>
+                <input id="input12" class="text-input" type="text" value="Borislav" />
+              </div>
+              <div class="layout__item u-1/2 u-1/1-palm u-mb++">
+                <label for="input13">Last Name</label>
+                <input id="input13" class="text-input" type="text" value="Schildkraut" />
+              </div>
+            </div>
+            <div class="layout layout--huge">
+              <div class="layout__item u-1/4 u-1/1-palm u-mb++">
+                <label for="input14">Credit Card Number</label>
+                <input id="input14" class="text-input" type="text" value="" placeholder="1234 5678 9012 3456" />
+              </div>
+              <div class="layout__item u-1/4 u-1/1-palm u-mb++">
+                <label for="input15">CVV</label>
+                <input id="input15" class="text-input" type="text" value="" placeholder="123" />
+              </div>
+              <div class="layout__item u-1/4 u-1/1-palm u-mb++">
+                <label for="input16">Exp Date - Month</label>
+                <px-dropdown id="input16" display-value="10-October"></px-dropdown>
+              </div>
+              <div class="layout__item u-1/4 u-1/1-palm u-mb++">
+                <label for="input17">Exp Date - Year</label>
+                <px-dropdown id="input17" display-value="2022"></px-dropdown>
+              </div>
+            </div>
+          </section>
+
+        </form>
+        <div class="flex flex--right">
+          <button class="btn">Cancel</button>
+          <button class="btn btn--call-to-action" type="submit" form="form2">Submit</but>
+        </div>
+
+      </div>
+      <div class="help layout__item u-1/3 u-p++">
+        <div class="heading--section"><px-icon class="u-mr" icon="px-obj:light-bulb"></px-icon>Tips & Hints</div>
+        <p>TIP TOPIC</p>
+        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
+        <br/>
+        <p>TIP TOPIC</p>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+      </div>
+    </div>
+
+  </body>
+</html>

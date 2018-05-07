@@ -20,6 +20,7 @@
 // Base
 @import "px-flexbox-design/_base.flexbox.scss";
 @import "px-headings-design/_base.headings.scss";
+$inuit-enable-validation-states: true;
 @import "px-forms-design/_base.forms.scss";
 
 // Meta
@@ -29,6 +30,7 @@ $inuit-enable-btn--call-to-action : true;
 @import 'px-buttons-design/_objects.buttons.scss';
 $inuit-enable-layout--huge   : true;
 @import 'px-layout-design/_objects.layout.scss';
+@import 'px-actionable-design/_objects.actionable.scss';
 
 // Component
 .layout__item {
@@ -39,6 +41,10 @@ section {
 }
 px-dropdown {
   width: 100%;
+}
+small.validation-error {
+  position: absolute;
+  margin: 0.2rem;
 }
 
 // Trumps

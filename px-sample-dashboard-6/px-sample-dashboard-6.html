@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+    <link rel="import" href="/bower_components/px-kpi/px-kpi.html" />
+    <link rel="import" href="/bower_components/px-key-value-pair/px-key-value-pair.html" />
+    <link rel="import" href="/bower_components/px-percent-circle/px-percent-circle.html" />
+    <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+
+    <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+    <link rel="import" href="px-sample-dashboard-6-styles.html" />
+  </head>
+
+  <body>
+    <custom-style>
+      <style include="px-dark-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-dashboard-6-styles" is="custom-style"></style>
+    </custom-style>
+
+    <dom-bind>
+      <template is="dom-bind">
+
+        <section class="card u-p">
+          <span class="delta">Site Name</span>
+          <div class="layout layout--huge u-mv++">
+            <px-percent-circle class="layout__item percent-circle" val="32" max="100" thickness="15"></px-percent-circle>
+            <div class="layout__item flex flex--col flex--justify">
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+            </div>
+            <div class="layout__item flex flex--col flex--justify">
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+            </div>
+            <div class="layout__item flex flex--col flex--justify">
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+              <px-key-value-pair class="flex__item" label="Label" value="Value" size="epsilon"></px-key-value-pair>
+            </div>
+          </div>
+          <div class="layout layout--huge">
+            <px-simple-bar-chart class="layout__item vis1" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+            <px-simple-bar-chart class="layout__item vis2" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+            <px-simple-bar-chart class="layout__item vis3" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+            <px-simple-bar-chart class="layout__item vis4" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+          </div>
+        </section>
+
+        <section class="u-p u-mv++">
+          <span class="delta">Reliability</span>
+          <div class="layout layout--huge u-mt++">
+            <px-kpi class="layout__item vis1" label="Orders" value="125K" uom="UNITS" status-icon="px-nav:down" status-color="red" status-label="3%" spark-data="[[sparkData]]" spark-type="line"></px-kpi>
+            <px-kpi class="layout__item vis2" label="Production" value="42M" uom="UNITS" status-icon="px-nav:up" status-color="green" status-label="12%" spark-data="[[sparkData]]" spark-type="line"></px-kpi>
+            <px-kpi class="layout__item vis3" label="Uptime" value="345" uom="HRS" status-icon="px-nav:up" status-color="green" status-label="8%" spark-data="[[sparkData]]" spark-type="line"></px-kpi>
+          </div>
+        </section>
+
+        <section class="u-p u-mv++">
+          <span class="delta">Work Orders</span>
+          <px-data-grid grid-height="auto" table-data='[[tableData]]' hide-action-menu></px-data-grid>
+        </section>
+
+      </template>
+    </dom-bind>
+  </body>
+
+  <script>
+    var autobind = document.querySelector('dom-bind');
+    autobind.tableData = [
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      }
+    ];
+    autobind.sparkData = [{
+      "x": 1397102460000,
+      "y": 0.56
+    }, {
+      "x": 1397139660000,
+      "y": 0.4
+    }, {
+      "x": 1397177400000,
+      "y": 0.43
+    }, {
+      "x": 1397228040000,
+      "y": 0.33
+    }, {
+      "x": 1397248260000,
+      "y": 0.47
+    }, {
+      "x": 1397291280000,
+      "y": 0.41
+    }, {
+      "x": 1397318100000,
+      "y": 0.26
+    }, {
+      "x": 1397342100000,
+      "y": 0.42
+    }, {
+      "x": 1397390820000,
+      "y": 0.27
+    }, {
+      "x": 1397408100000,
+      "y": 0.38
+    }, {
+      "x": 1397458800000,
+      "y": 0.36
+    }, {
+      "x": 1397522940000,
+      "y": 0.32
+    }];
+  </script>
+</html>

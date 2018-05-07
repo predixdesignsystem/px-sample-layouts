@@ -9,6 +9,7 @@
  */
 
 // Settings
+@import "px-colors-design/_settings.colors.scss";
 @import "px-defaults-design/_settings.defaults.scss";
 
 // Tools
@@ -18,27 +19,40 @@
 @import "px-box-sizing-design/_generic.box-sizing.scss";
 
 // Base
-@import "px-flexbox-design/_base.flexbox.scss";
 @import "px-headings-design/_base.headings.scss";
-@import "px-forms-design/_base.forms.scss";
+@import "px-flexbox-design/_base.flexbox.scss";
 
 // Meta
 
 // Objects
-$inuit-enable-btn--call-to-action : true;
-@import 'px-buttons-design/_objects.buttons.scss';
 $inuit-enable-layout--huge   : true;
 @import 'px-layout-design/_objects.layout.scss';
 
 // Component
-.layout__item {
+html, body {
+  background-color: $gray17;
+  --px-base-background-color: $gray17;
+  --px-data-grid-header-background-color: $gray17;
+}
+.card {
+  background-color: $gray18;
+}
+.layout__item, .flex__item {
+  margin-bottom: 1rem;
   min-width: 10rem;
 }
-section {
-  margin: 4rem 0;
+.vis1 {
+  --px-vis-series-color-0: $purple5;
 }
-px-dropdown {
-  width: 100%;
+.vis2 {
+  --px-vis-series-color-0: $green5;
+}
+.vis3 {
+  --px-vis-series-color-0: $orange5;
+}
+.percent-circle {
+  --px-percent-circle-fill-color: $salmon3;
+  max-width: 25rem;
 }
 
 // Trumps
@@ -46,4 +60,3 @@ $inuit-enable-margins                  : true;
 $inuit-enable-margins--huge            : true;
 $inuit-enable-paddings                 : true;
 @import "px-spacing-design/_trumps.spacing.scss";
-@import "px-widths-responsive-design/_trumps.widths-responsive.scss";

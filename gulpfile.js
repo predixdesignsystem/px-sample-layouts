@@ -48,7 +48,7 @@ function buildCSS(){
 }
 
 gulp.task('sass', function() {
-  return gulp.src(['./sass/*.scss'])
+  return gulp.src(['px*/*.scss'])
     .pipe(cache('sassing'))
     .pipe(buildCSS())
     .pipe(stylemod({
@@ -56,8 +56,8 @@ gulp.task('sass', function() {
         return path.basename(file.path, path.extname(file.path)) + '-styles';
       }
     }))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream({match: 'css/*.html'}));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream({match: '**/*-styles.html'}));
 });
 
 gulp.task('generate-api', function (cb) {
@@ -69,7 +69,7 @@ gulp.task('generate-api', function (cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['sass/*.scss'], ['sass']);
+  gulp.watch(['**/*.scss'], ['sass']);
 });
 
 gulp.task('serve', function() {
@@ -82,8 +82,8 @@ gulp.task('serve', function() {
     server: ['./', 'bower_components'],
   });
 
-  gulp.watch(['sass/*.scss'], ['sass']);
-  gulp.watch(['css/*-styles.html', '*.html', 'demo/*.html']).on('change', browserSync.reload);
+  gulp.watch(['**/*.scss'], ['sass']);
+  gulp.watch(['**/*-styles.html', '**/*.html']).on('change', browserSync.reload);
 });
 
 gulp.task('bump:patch', function(){

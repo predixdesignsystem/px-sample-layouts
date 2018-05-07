@@ -1,425 +1,426 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Predix UI</title>
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="/bower_components/polymer/polymer.html" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
 
-  <link rel="import" href="/bower_components/px-tabs/px-tabs.html" />
-  <link rel="import" href="/bower_components/iron-pages/iron-pages.html" />
-  <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
-  <link rel="import" href="/bower_components/px-icon-set/px-icon-set.html" />
-  <link rel="import" href="/bower_components/px-vis-timeseries/px-vis-timeseries.html" />
-  <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+    <link rel="import" href="/bower_components/px-tabs/px-tabs.html" />
+    <link rel="import" href="/bower_components/iron-pages/iron-pages.html" />
+    <link rel="import" href="/bower_components/px-icon-set/px-icon.html" />
+    <link rel="import" href="/bower_components/px-icon-set/px-icon-set.html" />
+    <link rel="import" href="/bower_components/px-vis-timeseries/px-vis-timeseries.html" />
+    <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
 
-  <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
-  <link rel="import" href="px-sample-page-4-styles.html" />
-</head>
+    <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+    <link rel="import" href="px-sample-page-4-styles.html" />
+  </head>
 
-<body>
-  <custom-style>
-    <style include="px-dark-theme-styles" is="custom-style"></style>
-  </custom-style>
-  <custom-style>
-    <style include="px-sample-page-4-styles" is="custom-style"></style>
-  </custom-style>
+  <body>
+    <custom-style>
+      <style include="px-dark-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-page-4-styles" is="custom-style"></style>
+    </custom-style>
 
-  <section class="u-p u-mb++">
-    <div class="flex flex--justify flex--wrap">
-      <div class="flex flex--middle u-mb">
-        <span class="heading--page u-mr">Title of Page</span>
-        <px-icon class="u-mr" icon="px-fea:dashboard"></px-icon>
-        <px-icon class="u-mr" icon="px-fea:asset"></px-icon>
-      </div>
-      <div class="flex flex--middle u-mb">
-        <px-icon class="u-mr" icon="px-nav:notification"></px-icon>
-        <button class="btn">Default</button>
-      </div>
-    </div>
-    <div>Secondary Information</div>
-    <div>Supplemental Information</div>
-  </section>
-
-  <px-tabs selected="0">
-    <px-tab id='tab1'>Tab Navigation</px-tab>
-    <px-tab id='tab2'>Tab Navigation</px-tab>
-    <px-tab id='tab3'>Tab Navigation</px-tab>
-    <px-tab id='tab3'>Tab Navigation</px-tab>
-  </px-tabs>
-
-  <iron-pages selected="0">
-    <dom-bind>
-      <template is="dom-bind">
-        <div class="dark-card u-p">
-          <px-vis-timeseries debounce-resize-timing="250" width="700" height="300" chart-horizontal-alignment="center" chart-vertical-alignment="center"
-            register-config='{"type":"horizontal"}' chart-data="[[chartData]]" series-config='{"y0":{"name":"TC01-TTXM","x":"timeStamp","y":"y0","yAxisUnit":"C"},"y1":{"name":"TC02-TTXM","x":"timeStamp","y":"y1","yAxisUnit":"C"},"y2":{"name":"TC03-TTXM","x":"timeStamp","y":"y2","yAxisUnit":"C"},"y3":{"name":"TC04-TTXM","x":"timeStamp","y":"y3","yAxisUnit":"C"}}'
-            chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}' x-axis-config='{"title":"Date"}' y-axis-config='{"title":"Temperature","titleTruncation":false,"unit":"C"}'>
-          </px-vis-timeseries>
-          <br/><br/>
-          <px-data-grid class="u-mv++" table-data='[[tableData]]' hide-action-menu></px-data-grid>
+    <section class="u-p u-mb++">
+      <div class="flex flex--justify flex--wrap">
+        <div class="flex flex--middle u-mb">
+          <span class="heading--page u-mr">Title of Page</span>
+          <px-icon class="u-mr" icon="px-fea:dashboard"></px-icon>
+          <px-icon class="u-mr" icon="px-fea:asset"></px-icon>
         </div>
-      </template>
-    </dom-bind>
-  </iron-pages>
+        <div class="flex flex--middle u-mb">
+          <px-icon class="u-mr" icon="px-nav:notification"></px-icon>
+          <button class="btn">Default</button>
+        </div>
+      </div>
+      <div>Secondary Information</div>
+      <div>Supplemental Information</div>
+    </section>
 
-</body>
+    <px-tabs selected="0">
+      <px-tab id='tab1'>Tab Navigation</px-tab>
+      <px-tab id='tab2'>Tab Navigation</px-tab>
+      <px-tab id='tab3'>Tab Navigation</px-tab>
+      <px-tab id='tab3'>Tab Navigation</px-tab>
+    </px-tabs>
 
-<script>
-  var autobind = document.querySelector('dom-bind');
-  autobind.tableData = [
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    }
-  ];
-  autobind.chartData = [
-    {
-      "timeStamp": 1463999449680,
-      "y0": "6.91",
-      "y1": "-11.97",
-      "y2": "-4.44",
-      "y3": "8.98"
-    }, {
-      "timeStamp": 1465239067249,
-      "y0": "6.30",
-      "y1": "-12.25",
-      "y2": "-3.90",
-      "y3": "9.65"
-    }, {
-      "timeStamp": 1466478684818,
-      "y0": "6.96",
-      "y1": "-12.21",
-      "y2": "-4.56",
-      "y3": "10.00"
-    }, {
-      "timeStamp": 1467718302387,
-      "y0": "6.70",
-      "y1": "-11.66",
-      "y2": "-4.27",
-      "y3": "9.53"
-    }, {
-      "timeStamp": 1468957919956,
-      "y0": "6.52",
-      "y1": "-11.68",
-      "y2": "-4.30",
-      "y3": "9.65"
-    }, {
-      "timeStamp": 1470197537525,
-      "y0": "6.23",
-      "y1": "-11.24",
-      "y2": "-4.00",
-      "y3": "9.62"
-    }, {
-      "timeStamp": 1471437155094,
-      "y0": "6.87",
-      "y1": "-10.91",
-      "y2": "-3.74",
-      "y3": "9.16"
-    }, {
-      "timeStamp": 1472676772663,
-      "y0": "6.22",
-      "y1": "-10.22",
-      "y2": "-3.60",
-      "y3": "9.35"
-    }, {
-      "timeStamp": 1473916390232,
-      "y0": "6.91",
-      "y1": "-10.28",
-      "y2": "-4.22",
-      "y3": "9.54"
-    }, {
-      "timeStamp": 1475156007801,
-      "y0": "7.12",
-      "y1": "-9.66",
-      "y2": "-4.09",
-      "y3": "9.19"
-    }, {
-      "timeStamp": 1476395625370,
-      "y0": "7.18",
-      "y1": "-9.75",
-      "y2": "-4.06",
-      "y3": "8.88"
-    }, {
-      "timeStamp": 1477635242939,
-      "y0": "7.08",
-      "y1": "-9.14",
-      "y2": "-3.84",
-      "y3": "8.35"
-    }, {
-      "timeStamp": 1478874860508,
-      "y0": "6.96",
-      "y1": "-9.02",
-      "y2": "-3.29",
-      "y3": "8.51"
-    }, {
-      "timeStamp": 1480114478077,
-      "y0": "7.43",
-      "y1": "-9.00",
-      "y2": "-3.00",
-      "y3": "8.52"
-    }, {
-      "timeStamp": 1481354095646,
-      "y0": "7.53",
-      "y1": "-8.86",
-      "y2": "-2.96",
-      "y3": "9.09"
-    }, {
-      "timeStamp": 1482593713215,
-      "y0": "7.73",
-      "y1": "-9.52",
-      "y2": "-3.30",
-      "y3": "8.71"
-    }, {
-      "timeStamp": 1483833330784,
-      "y0": "7.21",
-      "y1": "-10.15",
-      "y2": "-3.02",
-      "y3": "8.37"
-    }, {
-      "timeStamp": 1485072948353,
-      "y0": "7.79",
-      "y1": "-9.68",
-      "y2": "-2.92",
-      "y3": "8.89"
-    }, {
-      "timeStamp": 1486312565922,
-      "y0": "7.14",
-      "y1": "-9.73",
-      "y2": "-2.35",
-      "y3": "8.84"
-    }, {
-      "timeStamp": 1487552183491,
-      "y0": "7.50",
-      "y1": "-9.73",
-      "y2": "-2.99",
-      "y3": "8.49"
-    }, {
-      "timeStamp": 1488791801060,
-      "y0": "7.43",
-      "y1": "-10.11",
-      "y2": "-2.44",
-      "y3": "7.95"
-    }, {
-      "timeStamp": 1490031418629,
-      "y0": "7.54",
-      "y1": "-9.76",
-      "y2": "-2.26",
-      "y3": "8.01"
-    }, {
-      "timeStamp": 1491271036198,
-      "y0": "7.38",
-      "y1": "-9.80",
-      "y2": "-2.21",
-      "y3": "8.19"
-    }, {
-      "timeStamp": 1492510653767,
-      "y0": "7.15",
-      "y1": "-9.74",
-      "y2": "-1.86",
-      "y3": "8.83"
-    }, {
-      "timeStamp": 1493750271336,
-      "y0": "7.44",
-      "y1": "-9.92",
-      "y2": "-2.45",
-      "y3": "8.74"
-    }, {
-      "timeStamp": 1494989888905,
-      "y0": "7.76",
-      "y1": "-9.23",
-      "y2": "-1.76",
-      "y3": "8.69"
-    }, {
-      "timeStamp": 1496229506474,
-      "y0": "7.22",
-      "y1": "-8.69",
-      "y2": "-1.34",
-      "y3": "8.33"
-    }, {
-      "timeStamp": 1497469124043,
-      "y0": "6.85",
-      "y1": "-8.25",
-      "y2": "-1.94",
-      "y3": "7.99"
-    }, {
-      "timeStamp": 1498708741612,
-      "y0": "6.41",
-      "y1": "-8.03",
-      "y2": "-2.30",
-      "y3": "8.27"
-    }, {
-      "timeStamp": 1499948359181,
-      "y0": "6.77",
-      "y1": "-8.30",
-      "y2": "-1.82",
-      "y3": "7.64"
-    }
-  ];
-</script>
+    <iron-pages selected="0">
+      <dom-bind>
+        <template is="dom-bind">
+          <div class="dark-card u-p">
+            <px-vis-timeseries debounce-resize-timing="250" width="700" height="300" chart-horizontal-alignment="center" chart-vertical-alignment="center"
+              register-config='{"type":"horizontal"}' chart-data="[[chartData]]" series-config='{"y0":{"name":"TC01-TTXM","x":"timeStamp","y":"y0","yAxisUnit":"C"},"y1":{"name":"TC02-TTXM","x":"timeStamp","y":"y1","yAxisUnit":"C"},"y2":{"name":"TC03-TTXM","x":"timeStamp","y":"y2","yAxisUnit":"C"},"y3":{"name":"TC04-TTXM","x":"timeStamp","y":"y3","yAxisUnit":"C"}}'
+              chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}' x-axis-config='{"title":"Date"}' y-axis-config='{"title":"Temperature","titleTruncation":false,"unit":"C"}'>
+            </px-vis-timeseries>
+            <br/><br/>
+            <px-data-grid class="u-mv++" table-data='[[tableData]]' hide-action-menu></px-data-grid>
+          </div>
+        </template>
+      </dom-bind>
+    </iron-pages>
+
+  </body>
+
+  <script>
+    var autobind = document.querySelector('dom-bind');
+    autobind.tableData = [
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      }
+    ];
+    autobind.chartData = [
+      {
+        "timeStamp": 1463999449680,
+        "y0": "6.91",
+        "y1": "-11.97",
+        "y2": "-4.44",
+        "y3": "8.98"
+      }, {
+        "timeStamp": 1465239067249,
+        "y0": "6.30",
+        "y1": "-12.25",
+        "y2": "-3.90",
+        "y3": "9.65"
+      }, {
+        "timeStamp": 1466478684818,
+        "y0": "6.96",
+        "y1": "-12.21",
+        "y2": "-4.56",
+        "y3": "10.00"
+      }, {
+        "timeStamp": 1467718302387,
+        "y0": "6.70",
+        "y1": "-11.66",
+        "y2": "-4.27",
+        "y3": "9.53"
+      }, {
+        "timeStamp": 1468957919956,
+        "y0": "6.52",
+        "y1": "-11.68",
+        "y2": "-4.30",
+        "y3": "9.65"
+      }, {
+        "timeStamp": 1470197537525,
+        "y0": "6.23",
+        "y1": "-11.24",
+        "y2": "-4.00",
+        "y3": "9.62"
+      }, {
+        "timeStamp": 1471437155094,
+        "y0": "6.87",
+        "y1": "-10.91",
+        "y2": "-3.74",
+        "y3": "9.16"
+      }, {
+        "timeStamp": 1472676772663,
+        "y0": "6.22",
+        "y1": "-10.22",
+        "y2": "-3.60",
+        "y3": "9.35"
+      }, {
+        "timeStamp": 1473916390232,
+        "y0": "6.91",
+        "y1": "-10.28",
+        "y2": "-4.22",
+        "y3": "9.54"
+      }, {
+        "timeStamp": 1475156007801,
+        "y0": "7.12",
+        "y1": "-9.66",
+        "y2": "-4.09",
+        "y3": "9.19"
+      }, {
+        "timeStamp": 1476395625370,
+        "y0": "7.18",
+        "y1": "-9.75",
+        "y2": "-4.06",
+        "y3": "8.88"
+      }, {
+        "timeStamp": 1477635242939,
+        "y0": "7.08",
+        "y1": "-9.14",
+        "y2": "-3.84",
+        "y3": "8.35"
+      }, {
+        "timeStamp": 1478874860508,
+        "y0": "6.96",
+        "y1": "-9.02",
+        "y2": "-3.29",
+        "y3": "8.51"
+      }, {
+        "timeStamp": 1480114478077,
+        "y0": "7.43",
+        "y1": "-9.00",
+        "y2": "-3.00",
+        "y3": "8.52"
+      }, {
+        "timeStamp": 1481354095646,
+        "y0": "7.53",
+        "y1": "-8.86",
+        "y2": "-2.96",
+        "y3": "9.09"
+      }, {
+        "timeStamp": 1482593713215,
+        "y0": "7.73",
+        "y1": "-9.52",
+        "y2": "-3.30",
+        "y3": "8.71"
+      }, {
+        "timeStamp": 1483833330784,
+        "y0": "7.21",
+        "y1": "-10.15",
+        "y2": "-3.02",
+        "y3": "8.37"
+      }, {
+        "timeStamp": 1485072948353,
+        "y0": "7.79",
+        "y1": "-9.68",
+        "y2": "-2.92",
+        "y3": "8.89"
+      }, {
+        "timeStamp": 1486312565922,
+        "y0": "7.14",
+        "y1": "-9.73",
+        "y2": "-2.35",
+        "y3": "8.84"
+      }, {
+        "timeStamp": 1487552183491,
+        "y0": "7.50",
+        "y1": "-9.73",
+        "y2": "-2.99",
+        "y3": "8.49"
+      }, {
+        "timeStamp": 1488791801060,
+        "y0": "7.43",
+        "y1": "-10.11",
+        "y2": "-2.44",
+        "y3": "7.95"
+      }, {
+        "timeStamp": 1490031418629,
+        "y0": "7.54",
+        "y1": "-9.76",
+        "y2": "-2.26",
+        "y3": "8.01"
+      }, {
+        "timeStamp": 1491271036198,
+        "y0": "7.38",
+        "y1": "-9.80",
+        "y2": "-2.21",
+        "y3": "8.19"
+      }, {
+        "timeStamp": 1492510653767,
+        "y0": "7.15",
+        "y1": "-9.74",
+        "y2": "-1.86",
+        "y3": "8.83"
+      }, {
+        "timeStamp": 1493750271336,
+        "y0": "7.44",
+        "y1": "-9.92",
+        "y2": "-2.45",
+        "y3": "8.74"
+      }, {
+        "timeStamp": 1494989888905,
+        "y0": "7.76",
+        "y1": "-9.23",
+        "y2": "-1.76",
+        "y3": "8.69"
+      }, {
+        "timeStamp": 1496229506474,
+        "y0": "7.22",
+        "y1": "-8.69",
+        "y2": "-1.34",
+        "y3": "8.33"
+      }, {
+        "timeStamp": 1497469124043,
+        "y0": "6.85",
+        "y1": "-8.25",
+        "y2": "-1.94",
+        "y3": "7.99"
+      }, {
+        "timeStamp": 1498708741612,
+        "y0": "6.41",
+        "y1": "-8.03",
+        "y2": "-2.30",
+        "y3": "8.27"
+      }, {
+        "timeStamp": 1499948359181,
+        "y0": "6.77",
+        "y1": "-8.30",
+        "y2": "-1.82",
+        "y3": "7.64"
+      }
+    ];
+  </script>
+</html>

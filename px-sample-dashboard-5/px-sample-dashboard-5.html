@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+    <link rel="import" href="/bower_components/px-kpi/px-kpi-list.html" />
+    <link rel="import" href="/bower_components/px-simple-bar-chart/px-simple-bar-chart.html" />
+    <link rel="import" href="/bower_components/px-key-value-pair/px-key-value-pair.html" />
+    <link rel="import" href="/bower_components/px-data-grid/px-data-grid.html" />
+
+    <link rel="import" href="/bower_components/px-dark-theme/px-dark-theme-styles.html">
+    <link rel="import" href="px-sample-dashboard-5-styles.html" />
+  </head>
+
+  <body>
+    <custom-style>
+      <style include="px-dark-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-dashboard-5-styles" is="custom-style"></style>
+    </custom-style>
+
+    <section class="light-card u-p">
+      <span class="delta">Production</span>
+      <div class="layout layout--huge u-mv++">
+        <px-key-value-pair class="layout__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+        <px-key-value-pair class="layout__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+        <px-key-value-pair class="layout__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+        <px-key-value-pair class="layout__item" label="Label" value="Value" size="beta"></px-key-value-pair>
+      </div>
+      <div class="layout layout--huge">
+        <px-simple-bar-chart class="layout__item vis1" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis2" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis3" width="250" chart-data='[ [112,57,53,122,128,120,56] ]'></px-simple-bar-chart>
+        <px-simple-bar-chart class="layout__item vis4" width="250" chart-data='[ [53,122,128,120,56,94,102] ]'></px-simple-bar-chart>
+      </div>
+    </section>
+
+    <section class="medium-card u-p">
+      <span class="delta">Watch List</span>
+      <div class="layout layout--huge">
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" footer="Status label" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" footer="Status label" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" footer="Status label" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+      </div>
+    </section>
+
+    <section class="dark-card u-p">
+      <span class="delta">Status</span>
+      <dom-bind>
+        <template is="dom-bind">
+          <px-data-grid grid-height="auto" table-data='[[tableData]]' hide-action-menu></px-data-grid>
+        </template>
+      </dom-bind>
+    </section>
+
+  </body>
+
+  <script>
+    var autobind = document.querySelector('dom-bind');
+    autobind.tableData = [
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      }
+    ];
+  </script>
+</html>

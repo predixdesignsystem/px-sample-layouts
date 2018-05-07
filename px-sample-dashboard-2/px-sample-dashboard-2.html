@@ -16,216 +16,217 @@
     <link rel="import" href="px-sample-dashboard-2-styles.html" />
   </head>
 
-<body>
-  <custom-style>
-    <style include="px-theme-styles" is="custom-style"></style>
-  </custom-style>
-  <custom-style>
-    <style include="px-sample-dashboard-2-styles" is="custom-style"></style>
-  </custom-style>
+  <body>
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-dashboard-2-styles" is="custom-style"></style>
+    </custom-style>
 
-  <div class="card u-p">
-    <span class="heading--page">Production</span>
+    <div class="card u-p">
+      <span class="heading--page">Production</span>
 
-    <div class="layout u-mt++">
-      <px-kpi class="layout__item" label="Orders" value="21" size="beta"></px-kpi>
-      <px-kpi class="layout__item" label="Capacity" value="583" size="beta"></px-kpi>
-      <px-kpi class="layout__item" label="Utilization" value="89" uom="%" size="beta"></px-kpi>
-      <px-kpi class="layout__item" label="Faults" value="3" size="beta"></px-kpi>
-      <px-kpi class="layout__item" label="Output" value="53" uom="MW" size="beta"></px-kpi>
+      <div class="layout u-mt++">
+        <px-kpi class="layout__item" label="Orders" value="21" size="beta"></px-kpi>
+        <px-kpi class="layout__item" label="Capacity" value="583" size="beta"></px-kpi>
+        <px-kpi class="layout__item" label="Utilization" value="89" uom="%" size="beta"></px-kpi>
+        <px-kpi class="layout__item" label="Faults" value="3" size="beta"></px-kpi>
+        <px-kpi class="layout__item" label="Output" value="53" uom="MW" size="beta"></px-kpi>
+      </div>
     </div>
-  </div>
 
-  <px-card class="background" header-text="Watch List" icon="px-fea:asset">
-    <px-icon slot='actions' icon='px-nav:more'></px-icon>
-    <div class="layout layout--huge">
-      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-      <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
-    </div>
-  </px-card>
+    <px-card class="background" header-text="Watch List" icon="px-fea:asset">
+      <px-icon slot='actions' icon='px-nav:more'></px-icon>
+      <div class="layout layout--huge">
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+        <px-kpi-list class="layout__item" label="Name" status-icon="px-nav:up" status-color="green" status-label="0%" values='[{"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}, {"label": "Label","value": "0","uom": "%"}]'></px-kpi-list>
+      </div>
+    </px-card>
 
-  <px-card class="background" header-text="Asset Status" icon="px-obj:fleet">
-    <px-icon slot='actions' icon='px-nav:more'></px-icon>
-    <dom-bind>
-      <template is="dom-bind">
-        <px-data-grid-paginated table-data='[[tableData]]' hide-action-menu></px-data-grid-paginated>
-      </template>
-    </dom-bind>
-  </px-card>
+    <px-card class="background" header-text="Asset Status" icon="px-obj:fleet">
+      <px-icon slot='actions' icon='px-nav:more'></px-icon>
+      <dom-bind>
+        <template is="dom-bind">
+          <px-data-grid-paginated table-data='[[tableData]]' hide-action-menu></px-data-grid-paginated>
+        </template>
+      </dom-bind>
+    </px-card>
 
-</body>
+  </body>
 
-<script>
-  var autobind = document.querySelector('dom-bind');
-  autobind.tableData = [
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-compressionratio",
-      "units": "psi",
-      "current reading": "0.88"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-dischargepressure",
-      "units": "psi",
-      "current reading": "2.605"
-    },
-    {
-      "last occurance": "2017-09-17, 19:33:51",
-      "asset path": "/Unit1/HRSG",
-      "point": "39VS11",
-      "meter": "crank-frame-suctionpressure",
-      "units": "m/s",
-      "current reading": "18.331"
-    }
-  ];
-</script>
+  <script>
+    var autobind = document.querySelector('dom-bind');
+    autobind.tableData = [
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-compressionratio",
+        "units": "psi",
+        "current reading": "0.88"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-dischargepressure",
+        "units": "psi",
+        "current reading": "2.605"
+      },
+      {
+        "last occurance": "2017-09-17, 19:33:51",
+        "asset path": "/Unit1/HRSG",
+        "point": "39VS11",
+        "meter": "crank-frame-suctionpressure",
+        "units": "m/s",
+        "current reading": "18.331"
+      }
+    ];
+  </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predix UI</title>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+
+    <link rel="import" href="/bower_components/px-dropdown/px-dropdown.html" />
+    <link rel="import" href="/bower_components/px-toggle/px-toggle.html" />
+
+    <link rel="import" href="/bower_components/px-theme/px-theme-styles.html">
+    <link rel="import" href="px-sample-form-3-styles.html" />
+  </head>
+
+  <body class="u-p">
+    <custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>
+    <custom-style>
+      <style include="px-sample-form-3-styles" is="custom-style"></style>
+    </custom-style>
+
+    <heading class="heading--page">Account Creation</heading>
+    <br/>
+    <span>* Required form field</span>
+
+    <form id="form3">
+
+      <section>
+        <div class="heading--section u-mb++">Your Information</div>
+        <div class="u-1/3 u-mb++">
+          <label for="input1">Name *</label>
+          <input id="input1" class="text-input" type="text" value="Borislav Schildkraut" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input2">Department *</label>
+          <px-dropdown id="input2" display-value="Select a Department" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input3">Phone *</label>
+          <input id="input3" class="text-input" type="tel" value="" placeholder="(###) ###-####" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input4">Mobile</label>
+          <input id="input4" class="text-input" type="tel" value="" placeholder="(###) ###-####" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input5">Building/Room Number</label>
+          <input id="input5" class="text-input" type="text" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input6">Username *</label>
+          <input id="input6" class="text-input" type="text" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input7">Password *</label>
+          <input id="input7" class="text-input" type="password" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input8">Confirm Password *</label>
+          <input id="input8" class="text-input" type="password" />
+        </div>
+        <div class="u-1/3 u-mb++">
+          <label for="input9">Email *</label>
+          <input id="input9" class="text-input" type="email" />
+        </div>
+      </section>
+
+    </form>
+
+    <div class="u-mb++ u-1/3 text--right">
+      <button class="btn">Cancel</button>
+      <button class="btn btn--call-to-action" type="submit" form="form3">Submit</button>
+    </div>
+
+
+
+  </body>
+</html>
