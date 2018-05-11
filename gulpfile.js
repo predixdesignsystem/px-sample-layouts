@@ -32,6 +32,7 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const cache = require('gulp-cached');
 const exec = require('child_process').exec;
+const { ensureLicense } = require('ensure-px-license');
 
 const sassOptions = {
   importer: importOnce,
@@ -73,6 +74,7 @@ gulp.task('sass', function() {
         return path.basename(file.path, path.extname(file.path)) + '-styles';
       }
     }))
+    .pipe(ensureLicense())
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream({match: '**/*-styles.html'}));
 });
@@ -121,6 +123,12 @@ gulp.task('bump:major', function(){
   .pipe(gulp.dest('./'));
 });
 
+gulp.task('license', function() {
+  return gulp.src(['./**/*.{html,js,css,scss}', '!./node_modules/**/*', '!./bower_components?(-1.x)/**/*'])
+    .pipe(ensureLicense())
+    .pipe(gulp.dest('.'));
+});
+
 gulp.task('default', function(callback) {
-  gulpSequence('clean', 'sass', 'generate-api')(callback);
+  gulpSequence('clean', 'sass', 'generate-api', 'license')(callback);
 });
